@@ -21,5 +21,5 @@ library(reshape2)
 data$subject<-as.factor(data$subject)
 mdata<-melt(data,id=c("subject","activity"))
 tdata<-dcast(mdata,subject+activity~variable,mean)
-write.csv(tdata,"./DataSet.csv")
+write.table(tdata,"./tidy_dataset.txt",row.names = FALSE,quote=FALSE)
 
